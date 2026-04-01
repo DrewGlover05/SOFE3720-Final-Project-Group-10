@@ -2,7 +2,7 @@ from board import Board
 
 def main():
     board = Board()
-    current_player = 1  # X = 1, O = 2
+    current_player = 1
 
     # While loop to run the game until it ends
     while True:
