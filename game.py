@@ -46,7 +46,7 @@ class Game:
         if move: # If the AI returns a valid move, make that move on the board
             row, col = move
             self.board.make_move(row, col, self.current_player)
-            print(f"[AI] played ({row}, {col}) - nodes evaluated: {self.ai.nodes_evaluated}")
+            print(f"AI played ({row}, {col}) - nodes evaluated: {self.ai.nodes_evaluated}")
 
         self._check_game_over() # Check if the AI's move ended the game
         if not self.game_over: # If the game is not over, switch to the other player's turn
