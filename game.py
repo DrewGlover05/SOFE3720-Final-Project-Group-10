@@ -80,32 +80,3 @@ class Game:
         self.current_player = 1
         self.game_over = False
         self.winner = None
-
-    # Run the game in a terminal without GUI (temporary)
-    def run_terminal(self):
-        print(f"You are '{self.human_symbol}', AI is '{self.ai_symbol}'")
-        print("X always goes first.\n")
-
-        while not self.game_over:
-            self.board.display()
-
-            if self.is_human_turn():
-                print(f"Your turn ({self.human_symbol}). Enter row and col (0-2): ", end="")
-                try:
-                    row, col = map(int, input().split())
-                except ValueError:
-                    print("Invalid input. Enter two numbers separated by a space.")
-                    continue
-
-                if not (0 <= row <= 2 and 0 <= col <= 2):
-                    print("Out of bounds. Try again.")
-                    continue
-
-                if not self.human_move(row, col):
-                    print("Cell occupied. Try again.")
-            else:
-                print("AI is thinking...")
-                self.ai_move()
-
-        self.board.display()
-        print(self.get_winner_text())
