@@ -92,13 +92,3 @@ class AI:
                     break
 
             return best # Return the best score for the minimizer
-
-    def evaluate(self, board: Board) -> int:
-        # Simple heuristic wrapper that is just used for reporting and displaying purposes
-        winner = board.check_win()
-        ai_player = 1 if self.symbol == 'X' else 2
-        if winner == ai_player: # AI wins
-            return 10
-        elif winner != 0: # Opponent wins
-            return -10 
-        return 0
