@@ -3,13 +3,6 @@ class Board:
     def __init__(self):
         self.grid = [[' ' for _ in range(3)] for _ in range(3)]
 
-    # Display the current state of the board
-    def display(self):
-        print("  0 1 2")
-        for i, row in enumerate(self.grid):
-            print(f"{i} {' '.join(row)}")
-        print()
-
     # Attempt to place a move on the board for the given player
     def make_move(self, row: int, col: int, player: int) -> bool:
         if self.grid[row][col] == ' ':
